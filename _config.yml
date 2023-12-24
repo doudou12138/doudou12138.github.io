@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Doudou's Blog
 subtitle: ''
 description: ''
 keywords:
 author: doudou
-language: zh-CN
+language: zh-Hans
 timezone: ''
 
 # URL
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: async
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

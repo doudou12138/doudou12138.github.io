@@ -1,0 +1,147 @@
+# 设置主题(深色亮色)
+theme:
+  switch: true
+  default: style-light # style-light style-dark
+
+# logo
+# favicon:
+#   logo: favicon-32x32.png # 顶部log
+#   icon16: favicon-16x16.png
+#   icon32: favicon-32x32.png
+#   appleTouchIcon: apple-touch-icon.png  # ios加入到桌面后显示的log
+#   webmanifest: /site.webmanifest
+#   visibilitychange: true
+#   hidden: failure.ico # 离开窗口时显示图标
+#   showText: (/≧▽≦/)咦！又好了！ # 激活窗口时显示文字
+#   hideText: (●—●)喔哟，崩溃啦！ # 离开窗口时显示文字
+favicon:
+  logo: https://img.shields.io/badge/-逗逗-008080?style=flat&logo=java&logoColor=black
+  dark_logo: https://img.shields.io/badge/-逗逗-007396?style=flat&logo=java&logoColor=black
+  icon16: https://img.shields.io/badge/-逗-008080?style=flat&logo=java&logoColor=black
+  icon32: https://img.shields.io/badge/-逗-008080?style=flat&logo=java&logoColor=black
+  appleTouchIcon: apple-touch-icon.png
+  webmanifest: /site.webmanifest
+
+# 设置user基本信息
+user:
+  name: 逗逗
+  first_name: 柚子
+  last_name: 一碗
+  email: 2380601579@qq.com
+  avatar: https://avatars.githubusercontent.com/u/91525811?v=4
+  describe: 网站简介。
+  domain: http://doudou12138.github.io
+
+# 顶部导航栏设置
+top_bars:
+  - title: 主页
+    url: /
+    children:
+      - title: archives2
+        url: /archives2/
+  - title: 归档
+    url: /archives/
+    noswup: true
+  - title: 关于
+    url: /about/
+
+# 设置边栏的显示内容
+sidebar:
+  social: # 社交地址
+    - name: github
+      icon: fab fa-github
+      url: https://github.com/doudou12138
+  typedTextPrefix: I`m
+  typedText: ["a Software Engineer"]
+  info:
+    - key: 地址
+      val: 江苏南京
+    - key: 学校
+      val: 南京大学
+    - key: 工作(实习)单位
+      val: 小米
+
+
+# 设置页面的横幅
+# # 可参考默认配置
+banner:
+  use_cover: false # 文章详情页是否使用文章封面做横幅
+  default:
+    type: img
+    bgurl: /img/banner.png
+    bannerText: Hi my new friend!
+    position: top
+    fit: cover
+  index:
+    bannerTitle: 树深时见鹿，<br>溪午不闻钟。
+    bannerText: Hi my new friend!
+    videoUrl: 
+  archive:
+    bannerTitle: 云间连下榻，<br>天上接行杯。
+    bannerText: The article archive
+  links:
+    bannerTitle: 莫愁前路无知己，<br>天下谁人不识君。
+    bannerText: A link to a friend's website
+  comment:
+    bannerTitle: 夜来卧听风吹雨, <br/>铁马冰河入梦来。
+    bannerText: The magic tree hole
+  about:
+    bannerTitle: 醉后不知天在水，<br>满船清梦压星河。
+    bannerText: About me
+
+# 页脚配置预览
+# footer:
+#   # 支持
+#   powered:
+#     enable: true
+#   # 备案号
+#   beian:
+#     enable: false
+#     icp:
+#   copyrightYear:
+#   # 博客运行时间
+#   live_time:
+#     enable: false
+#     prefix: footer.tips
+#     start_time: 04/10/2022 17:00:00
+#   custom_text:
+footer:
+  copyrightYear: 2023
+  live_time:
+    enable: true
+    prefix: footer.tips
+    start_time: 12/23/2023 23:00:00
+  custom_text:
+
+# 文章的配置
+# 打赏
+# reward:
+#   enable: false
+#   comment: reward.comment
+#   # url:
+#   methods:
+#     - name:
+#     - path:
+
+# 目录
+# 参考以下默认配置
+# toc:
+#   enable: false
+#   list_number: true # 是否显示编号
+#   post_title: true # 标题可快速打开目录
+#   max_depth: 3 # 目录最大深度
+#   min_depth: 1 # 目录最小深度
+toc:
+  enable: true
+
+# 封面图
+# cover:
+#   default: /img/block.jpg
+#   type: img # img || date || random
+cover:
+  type: date
+
+# 文章破图时兜底图片
+# error_img:
+#   flink: /img/friend_404.gif
+#   post_page: /img/404.jpg
