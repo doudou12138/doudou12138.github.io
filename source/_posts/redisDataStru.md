@@ -63,3 +63,34 @@ len1 + element-tot-len 之和即为 entry 总长度 total-len
 
 - 反向查询
 从当前列表项起始位置的指针开始，向左逐个字节解析，得到前一项的 element-tot-len 值，也就可以得到encoding + data的总长度，从而得出entry的总长度；减去entry的总长度，就得到了前一个entry的地址～
+
+### hash的内实现
+先看看以下命令的输出
+```
+hset user name doudou age 18 gender 1 height 175
+hgetall user
+```
+我们会发现输出的结果的顺序与我们放入的顺序完全一致.这绝不是偶然
+
+ziplist->hashtable:
+1. 当ziplist的zlentry个数大于512时,将从ziplist转为hashtable
+> 可配  hash-max-ziplist-entries 512
+2. 当单个元素超64mb后,也会转hashtable
+> 可配置: hash-max-ziplist-value 64 
+
+### set的内实现
+dict或者intset(所有数据都使用整数类型表示)
+```
+sadd testset 1 2 3 4 7 5 2
+smembers testset
+// 1 2 3 4 5 7
+```
+会输出一个有序的结果
+```
+object encoding testset
+//intset
+```
+- 转hashtable的条件:
+1. 任意一个成员不能用整数类型表示
+2. 元素个数超过512
+> 可配置: set-max-intset-entries 512
