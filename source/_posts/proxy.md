@@ -1,6 +1,6 @@
 ---
 title: 代理
-category: 代理/面经
+category: 代理
 ---
 
 - 什么是代理模式

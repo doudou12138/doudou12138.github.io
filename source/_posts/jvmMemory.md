@@ -1,6 +1,6 @@
 ---
 title: JVM内存模型
-category: JVM/面经
+category: JVM
 ---
 - JVM结构主要分为四个部分
 1. 类加载器

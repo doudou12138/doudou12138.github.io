@@ -1,6 +1,6 @@
 ---
 title: redis数据结构
-category: redis/面经
+category: redis
 ---
 redis支持的数据结构: string, list, set, zset, hash, hyperloglog, Geo, Streams
 上述是对外数据结构

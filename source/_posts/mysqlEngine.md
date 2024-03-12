@@ -1,6 +1,6 @@
 ---
 title: 存储引擎
-category: MySQL/面经
+category: MySQL
 ---
 - MySQL有哪些存储引擎:  
 可以在mysql中使用以下命令查看mysql支持的存储引擎:

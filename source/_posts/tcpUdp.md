@@ -1,6 +1,6 @@
 ---
 title: tcp与udp
-category: 网络/面经
+category: 网络
 ---
 ## 三次握手,四次挥手(TCP)
 ### 示意图

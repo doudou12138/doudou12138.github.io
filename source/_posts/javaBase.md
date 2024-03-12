@@ -1,6 +1,6 @@
 ---
 title: java基础
-category: java基础/面经
+category: java基础
 ---
 - 为什么重写equals()要重写hashCode()
 可以借助HashMap定位的逻辑来看,先根据HashCode锁定桶,再在桶中遍历使用equals对比  
