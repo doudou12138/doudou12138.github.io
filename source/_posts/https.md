@@ -1,6 +1,6 @@
 ---
 title: https
-category: 计网
+category: 网络
 ---
 - https加密的过程
 1. 客户端发起一个http请求,告诉服务器自己支持哪些hash算法
