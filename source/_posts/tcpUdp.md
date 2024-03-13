@@ -45,10 +45,11 @@ cwnd达到ssthresh后,cwnd的增长方式不再是翻倍,而是+1,当网络阻�
 
 ## TCP,UDP区别
 
-1. Tcp基于连接,UDP无连接
+1. Tcp面向连接,UDP无连接
 2. TCP可靠,UDP不可靠
 3. TCP具有重传机制(还有Ack机制),保证有序,Udp没有且无序
 4. tcp对系统资源要求多,相对慢;udp更快
+5. tcp有流量控制和拥塞控制的能力
 
 - TCP,udp各自应用场景
 TCP: web浏览,文件传输,邮件...

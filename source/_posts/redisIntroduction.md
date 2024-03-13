@@ -14,3 +14,18 @@ redis和memcached都基于内存,且可以做缓存但有着以下区别:
 2. redis有持久化功能(aof,rdb);而memcached没有,服务宕机了数据就丢失了
 3. redis原生支持集群
 4. redis支持订阅模型,lua脚本,事务等功能,而memcached不支持
+5. memcached的过期策略是惰性删除,而redis同时使用了惰性删除和定期删除
+
+- redis的过期策略
+惰性删除 + 定期删除
+
+- redis中过期时间和key在一起吗
+不在.  
+```
+typedef struct redisDb{
+    dict *dict;  
+    dict *expires;
+    ....
+}
+```
+其中dict是保存键值对的,expires是保存key和对应的过期时间long long类型
