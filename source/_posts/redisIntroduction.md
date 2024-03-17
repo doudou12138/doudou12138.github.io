@@ -19,6 +19,11 @@ redis和memcached都基于内存,且可以做缓存但有着以下区别:
 - redis的过期策略
 惰性删除 + 定期删除
 
+- redis的淘汰策略
+1. Allkeys-random
+2. Allkeys-lru
+3. 
+
 - redis中过期时间和key在一起吗
 不在.  
 ```

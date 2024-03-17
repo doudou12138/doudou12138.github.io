@@ -88,3 +88,14 @@ hotSpot中实现了多种垃圾收集器,并且没有哪个垃圾收集器是最
 jdk8以前:  
 新生代:Parallel Scavenge  老年代:Parallel Old  
 jdk9~21: 新生代老年代均采用G1
+
+- 什么时候触发minor gc(young gc)
+当eden区剩余空间不足以分配新对象时
+
+- 什么时候触发full gc
+当老年代中剩余空间不足以分配新对象时  
+当老年代剩余空间小于进入老年代的对象的平均大小时  
+
+- CMS的含义:
+Concurrent, Mark, Sweep
+
