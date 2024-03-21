@@ -99,3 +99,37 @@ jdk9~21: 新生代老年代均采用G1
 - CMS的含义:
 Concurrent, Mark, Sweep
 
+- g1较CMS的优点
+g1采用标记整理,局部采用复制算法;不会产生内存碎片   
+g1有时间预测模型,能精准控制回收时间.G1将堆分为多个Region,然后根据控制时间来选择回收收益最多的区域回收(不全堆扫描,增量回收)  
+g1的清理线程与用户线程不并行,不会产生浮动垃圾  
+
+- G1中的Remembered Set和Card Table
+都是用来处理Region中的引用关系.Remembered Set精细化的处理Region间的应用  
+Card Table粗粒度的处理Region的引用,为Region标记'脏',回收时优先处理'脏'的Region   
+
+
+
+- 内存信息排查
+1. 拿到PID
+```
+netstat -ano | findstr ${port} //windows
+netstat -ntlp | grep ${port} //linux
+```
+2. jmap -heap ${PID}
+3. jstack ${PID}
+
+- 应用问题排查,假死排查等
+1. tcp问题排查
+netstat -ntlp | grep ${port}
+查看tcp状态是否异常,是否有大量的time_wait
+2. 内存信息排查
+内存快照,堆快照,栈快照
+
+- cpu过高排查
+top找到cpu过高的进程   
+top -H -p ${pid}找到cpu不正常的线程  
+```
+-H: 显示线程
+```
+jstack 显示堆栈信息并使用线程号匹配,看是否有异常

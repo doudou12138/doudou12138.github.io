@@ -94,3 +94,12 @@ object encoding testset
 1. 任意一个成员不能用整数类型表示
 2. 元素个数超过512
 > 可配置: set-max-intset-entries 512
+
+
+### redis实现延时队列
+使用**zset**实现,其中score是时间戳  
+生产者向zset中放入消息和时间戳,消费者请求该zset试图拿数据(score有范围要求**延时**),如果没有则重试(可以sleep一会释放些cpu资源),有的话则删除  
+拿数据判断和删除需要是原子操作(lua脚本实现),以防止多个消费者出现异常  
+优点: 
+实现简单(对比rabbitmq:需要exchange,queue,binding,routingkey,还要多个queue实现死信队列)
+可靠性不如MQ. ack,重传等机制可能都要自己实现  
