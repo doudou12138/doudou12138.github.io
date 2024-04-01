@@ -103,3 +103,11 @@ object encoding testset
 优点: 
 实现简单(对比rabbitmq:需要exchange,queue,binding,routingkey,还要多个queue实现死信队列)
 可靠性不如MQ. ack,重传等机制可能都要自己实现  
+
+- set的应用场景
+1. 抽奖
+2. 点赞
+3. 共同好友(求交集)
+
+- list的应用场景
+消息队列(但是不可靠,不成熟(没ack,重试等机制))
