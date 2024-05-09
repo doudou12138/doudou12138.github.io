@@ -2,6 +2,7 @@
 title: redis数据结构
 category: redis
 ---
+
 redis支持的数据结构: string, list, set, zset, hash, hyperloglog, Geo, Streams
 上述是对外数据结构
 
@@ -95,6 +96,19 @@ object encoding testset
 2. 元素个数超过512
 > 可配置: set-max-intset-entries 512
 
+### zset的内实现
+zset使用zskiplist(ziplist/skiplist)和dict实现,使用dict记录元素对应的score(即value是score)
+当同时满足下列两个条件时,会采用ziplist.否则,采用skiplist
+1. 元素个数小于128
+2. 每个元素小于64字节
+
+- hashtable是如何解决哈希冲突的
+链式哈希.即将拥有相同hash值的数据用链表串起来.
+因此,在元素个数远大于数组大小时,会发生严重的hash冲突,链表过长,时间复杂度退化
+
+- hashtable是如何rehash的
+首先一个hashtable中有两个dictht,我们称他们为哈希表1,哈希表2;当非rehash阶段,数据的操作只在哈希表1中进行,然后当触发rehash条件(负载因子大于1且不在进行bgsave和rewriteAof,或者说负载因子大于5)时,就会为哈希表2分配空间(哈希表1大小的两倍),然后渐进式rehash,在我们数据查询,删除,更新时会将对应索引中的元素全部进行rehash到哈希表2,随着操作的次数越来越多,会将所有元素都迁移到哈希表2,哈希表2改为哈希表1,开个空的哈希表2供下次rehash使用.
+>rehash时更新,查询,删除会同时使用哈希表1,2,而新增则直接往哈希表2中新增
 
 ### redis实现延时队列
 使用**zset**实现,其中score是时间戳  

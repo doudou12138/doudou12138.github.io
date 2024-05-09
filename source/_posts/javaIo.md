@@ -2,6 +2,7 @@
 title: java IO
 category: java基础
 ---
+
 - 字节流和字符流
 1. 字节流是给计算机看的,二进制;字符流是给人看的,特殊的带编码的二进制流
 2. 字节流是InputStream,OutputStream;字符流是Reader,Writer
