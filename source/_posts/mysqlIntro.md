@@ -1,6 +1,6 @@
 ---
 title: Mysql
-category: MySQL
+category: 数据库
 ---
 - 一条sql的执行过程
 1. 首先执行器根据Mysql的执行计划来查询数据,先会到缓存池中去查询(buffer pool),如果没有则再到数据库中查询, 将查询到的数据放入缓存池(buffer pool)
