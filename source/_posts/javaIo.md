@@ -18,3 +18,8 @@ category: java基础
 - IO与NIO的差别
 1. IO以字节流的形式处理数据,简单且优雅;而NIO以块的形式处理数据,处理速度比流更快
 2. IO阻塞的,NIO支持多路复用
+
+- BIO,NIO,AIO
+BIO是同步阻塞IO
+NIO是同步非阻塞IO
+AIO是异步非阻塞IO

@@ -1,6 +1,6 @@
 ---
 title: 代理
-category: 代理
+category: 设计模式
 ---
 
 - 什么是代理模式

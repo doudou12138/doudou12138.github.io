@@ -118,3 +118,14 @@ QUIC也有重试机制,并且与tcp不同的是QUIC的序列号(Packet Header中
 - quic如何解决队头堵塞问题
 tcp通过抽象Stream来实现请求的并发，但是共用的tcp窗口，如果一个stream丢包了，会把后面所有的stream都阻塞
 quic为每一个steam分配一个独立的滑动窗口，即使一个Strean异常了，也不会阻塞其他的stream
+
+- tcp连接中有哪些状态
+listening
+syn_send
+syn_receive
+ESTABLISHED
+FIN_WAIT1
+close_wait
+FIN_WAIT2
+LAST_ACK
+TIME_WAIT
